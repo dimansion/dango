@@ -75,12 +75,14 @@ class WatermarkTxt(models.Model):
 	place=(('kanan atas','kanan atas'),('kanan bawah','kanan bawah'),('kiri atas','kiri atas'),('kiri bawah','kiri bawah'))
 	image_original = models.ImageField (upload_to="images/",null=True,blank=True)
 	image_converted = models.ImageField(upload_to="images/")	
+	url_image=models.CharField(max_length=250,null=True,blank=True)
 	posisi=models.CharField(max_length=20,null=True,blank=True,choices=place)
 	teks=models.CharField(max_length=20,null=True,blank=True)
+
 	def save(self):
 		super(WatermarkTxt,self).save()
 		fotoname="media/{}".format(self.image_original.name)
-		
+
 		with Image(filename = fotoname) as source_img:
 		 	warna= Color('#ffffff')
 			font_title = Font(path='AlexBrush-Regular.ttf', size=70,color=warna)
@@ -98,6 +100,11 @@ class WatermarkTxt(models.Model):
 				source_img.caption(self.teks,top=source_img.height-80,font=font_title,gravity='south_east')
 				savename='result-kananbawah.png'
 			source_img.save(filename=fotoname.format(self.image_original.name))
+
+
+			
+
+
 
 class WatermarkImg(models.Model):
 	place=(('kanan atas','kanan atas'),('kanan bawah','kanan bawah'),('kiri atas','kiri atas'),('kiri bawah','kiri bawah'))

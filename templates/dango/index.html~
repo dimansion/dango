@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+
+       <ul>
+       	   <li><a href="/dango/convert/">Convert</a></li>        
+	   <li><a href="/dango/resize/">resize</a></li>
+	   <li><a href="/dango/rotate/">rotate</a></li>
+           <li><a href="/dango/meme/">Meme</a></li>
+	   <li><a href="/dango/watermark-img/">Watermark-img</a></li>
+           <li><a href="/dango/watermark-txt/">Watermark-txt</a></li>	
+	
+    </body>
+</html>

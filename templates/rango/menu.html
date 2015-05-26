@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Rango says..hello world!</h1>
+
+        {% if menu %}
+            <ul>
+                {% for menu in menu %}
+                <!-- Following line changed to add an HTML hyperlink -->
+                <li><a href="/rango/menu/{{ menu.slug }}">{{ menu.name }}</a></li>
+                {% endfor %}
+            </ul>
+       {% else %}
+            <strong>There are no menu present.</strong>
+       {% endif %}
+
+    </body>
+</html>

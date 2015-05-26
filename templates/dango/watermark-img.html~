@@ -1,0 +1,15 @@
+halaman watermark
+
+<form id="WatermarkImg" method="post" action="{%url 'Watermark-img'%}" enctype="multipart/form-data">
+	
+	{% csrf_token %}
+
+
+
+
+{{form.as_p}}
+
+	<input type="submit" name="submit" value="done" />
+</form>
+
+

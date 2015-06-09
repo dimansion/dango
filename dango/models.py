@@ -12,45 +12,45 @@ class Convert(models.Model):
 	image_converted = models.ImageField(upload_to="images/",null=True,blank=True)
 	def save(self):
 		super(Convert,self).save()
-		fotoname="media/{}".format(self.image_original.name)
-		nama="media/{}".format(self.image_original.name)
+		fotoname="/home/dimansuardi/dango/media/{}".format(self.image_original.name)
+		nama="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
 		with Image(filename=nama) as original:
 			with original.convert(str(self.ekstensi)) as converted:
 				base=os.path.basename(fotoname)
-				
+
 				nama=os.path.splitext(base)[0]
 
-				converted.save(filename='media/images/{}.{}'.format(nama,self.ekstensi))
+				converted.save(filename='/home/dimasuardi/dango/media/images/{}.{}'.format(nama,self.ekstensi))
 		super(Convert,self).save()
 
 class Resize(models.Model):
 	image_original = models.ImageField (upload_to="images/",null=True,blank=True)
-	image_converted = models.ImageField(upload_to="images/",null=True,blank=True)	
+	image_converted = models.ImageField(upload_to="images/",null=True,blank=True)
 	persen=models.IntegerField(null=True,blank=True)
 	def save(self):
 		super(Resize,self).save()
-		fotoname="media/{}".format(self.image_original.name)
+		fotoname="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
 
 		with Image(filename=fotoname) as img:
     		 width = img.width * self.persen/100
 		 height = img.height * self.persen/100
 
      		 img.resize(width,height)
-        	 
+
      		 img.save(filename=fotoname.format(self.image_original.name))
 		super(Resize,self).save()
 
 class Rotate(models.Model):
 	Arah=(('kanan','kanan'),('kiri','kiri'))
 	image_original = models.ImageField (upload_to="images/",null=True,blank=True)
-	image_converted = models.ImageField(upload_to="images/")	
+	image_converted = models.ImageField(upload_to="images/")
 	direction=models.CharField(max_length=7,null=True,blank=True,choices=Arah)
 	def save(self):
 		super(Rotate,self).save()
-		fotoname="media/{}".format(self.image_original.name)
-		
+		fotoname="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
+
        	 	with Image(filename=fotoname) as img:
-		
+
 			if str(self.direction) == 'kanan' :
                  	 img.rotate(90)
                  	 img.save(filename=fotoname.format(self.image_original.name))
@@ -63,18 +63,18 @@ class Rotate(models.Model):
 
 class Meme(models.Model):
 	image_original = models.ImageField (upload_to="images/",null=True,blank=True)
-	image_converted = models.ImageField(upload_to="images/")	
+	image_converted = models.ImageField(upload_to="images/")
 	teksatas=models.CharField(max_length=20,null=True,blank=True)
 	teksbawah=models.CharField(max_length=20,null=True,blank=True)
 	url_image=models.CharField(max_length=250,null=True,blank=True)
 	def save(self):
 		super(Meme,self).save()
-		fotoname="media/{}".format(self.image_original.name)
-		
+		fotoname="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
+
 		with Image(filename = fotoname) as source_img:
 			warna= Color('#ffffff')
 			font_title = Font(path='Quicksand-Regular.otf', size=70,color=warna)
-	
+
 			source_img.caption(self.teksatas,font=font_title,gravity='north')
 			source_img.caption(self.teksbawah,top=source_img.height-80,font=font_title,gravity='north')
 			source_img.save(filename=fotoname.format(self.teksatas,self.teksbawah,self.image_original.name))
@@ -82,19 +82,19 @@ class Meme(models.Model):
 class WatermarkTxt(models.Model):
 	place=(('kanan atas','kanan atas'),('kanan bawah','kanan bawah'),('kiri atas','kiri atas'),('kiri bawah','kiri bawah'))
 	image_original = models.ImageField (upload_to="images/",null=True,blank=True)
-	image_converted = models.ImageField(upload_to="images/")	
+	image_converted = models.ImageField(upload_to="images/")
 	url_image=models.CharField(max_length=250,null=True,blank=True)
 	posisi=models.CharField(max_length=20,null=True,blank=True,choices=place)
 	teks=models.CharField(max_length=20,null=True,blank=True)
 
 	def save(self):
 		super(WatermarkTxt,self).save()
-		fotoname="media/{}".format(self.image_original.name)
+		fotoname="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
 
 		with Image(filename = fotoname) as source_img:
 		 	warna= Color('#ffffff')
 			font_title = Font(path='AlexBrush-Regular.ttf', size=70,color=warna)
-		 	
+
 		 	if self.posisi == 'kanan atas':
 				source_img.caption(self.teks,font=font_title,gravity='north_east')
 				savename='result-kananatas.png'
@@ -119,8 +119,8 @@ class WatermarkImg(models.Model):
 	posisi=models.CharField(max_length=20,null=True,blank=True,choices=place)
 	def save(self):
 		super(WatermarkImg,self).save()
-		fotonamelogo="media/{}".format(self.image_logo.name)
-		fotonamebase="media/{}".format(self.image_original.name)
+		fotonamelogo="/home/dimasuardi/dango/media/{}".format(self.image_logo.name)
+		fotonamebase="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
 		images = (fotonamelogo,fotonamebase)
 		with nested(Image(filename=images[0]),
  	           Image(filename=images[1])) as (rose, wizard):
@@ -146,5 +146,5 @@ class WatermarkImg(models.Model):
 
 
   		   wizard.composite_channel("all_channels",rose,"dissolve",x,y)
-  
+
                    wizard.save(filename=fotonamebase.format(self.image_original.name))

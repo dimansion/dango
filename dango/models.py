@@ -3,18 +3,24 @@ from wand.image import Image
 from wand.color import Color
 from wand.font import Font
 from wand.compat import nested
+import os
 
 class Convert(models.Model):
-	FORMAT=(('png','png'),('jpg','jpg'))
-	ekstensi=models.CharField(max_length=5,choices=FORMAT)
+	FORMAT=(('png','png'),('jpg','jpg'),('tiff','tiff'),('pdf','pdf'))
+	ekstensi=models.CharField(max_length=9,choices=FORMAT)
 	image_original = models.ImageField(upload_to="images/",null=True,blank=True)
 	image_converted = models.ImageField(upload_to="images/",null=True,blank=True)
 	def save(self):
 		super(Convert,self).save()
+		fotoname="media/{}".format(self.image_original.name)
 		nama="media/{}".format(self.image_original.name)
 		with Image(filename=nama) as original:
 			with original.convert(str(self.ekstensi)) as converted:
-				converted.save(filename='rango.{}'.format(self.ekstensi))
+				base=os.path.basename(fotoname)
+				
+				nama=os.path.splitext(base)[0]
+
+				converted.save(filename='media/images/{}.{}'.format(nama,self.ekstensi))
 		super(Convert,self).save()
 
 class Resize(models.Model):
@@ -31,7 +37,7 @@ class Resize(models.Model):
 
      		 img.resize(width,height)
         	 
-     		 img.save(filename="resized")
+     		 img.save(filename=fotoname.format(self.image_original.name))
 		super(Resize,self).save()
 
 class Rotate(models.Model):
@@ -45,20 +51,22 @@ class Rotate(models.Model):
 		
        	 	with Image(filename=fotoname) as img:
 		
-			if self.direction == 'kanan' :
+			if str(self.direction) == 'kanan' :
                  	 img.rotate(90)
-                 	 img.save(filename='{}'.format(fotoname))
-			elif self.direction == 'kiri' :
+                 	 img.save(filename=fotoname.format(self.image_original.name))
+			elif str(self.direction) == 'kiri' :
                  	 img.rotate(270)
-                 	 img.save(filename='{}'.format(fotoname))
+                 	 img.save(filename=fotoname.format(self.image_original.name))
 			else :
 				print 'ga ada om'
+		super(Rotate,self).save()
 
 class Meme(models.Model):
 	image_original = models.ImageField (upload_to="images/",null=True,blank=True)
 	image_converted = models.ImageField(upload_to="images/")	
 	teksatas=models.CharField(max_length=20,null=True,blank=True)
 	teksbawah=models.CharField(max_length=20,null=True,blank=True)
+	url_image=models.CharField(max_length=250,null=True,blank=True)
 	def save(self):
 		super(Meme,self).save()
 		fotoname="media/{}".format(self.image_original.name)
@@ -102,15 +110,12 @@ class WatermarkTxt(models.Model):
 			source_img.save(filename=fotoname.format(self.image_original.name))
 
 
-			
-
-
-
 class WatermarkImg(models.Model):
 	place=(('kanan atas','kanan atas'),('kanan bawah','kanan bawah'),('kiri atas','kiri atas'),('kiri bawah','kiri bawah'))
 	image_logo=models.ImageField (upload_to="images/",null=True,blank=True)
 	image_original = models.ImageField (upload_to="images/",null=True,blank=True)
 	image_converted = models.ImageField(upload_to="images/")
+	url_image=models.CharField(max_length=250,null=True,blank=True)
 	posisi=models.CharField(max_length=20,null=True,blank=True,choices=place)
 	def save(self):
 		super(WatermarkImg,self).save()
@@ -124,23 +129,22 @@ class WatermarkImg(models.Model):
                    y=0
 		   savename=''
 		   if self.posisi == 'kanan atas' :
-	  	   	x=wizard.width - rose.width
+	  	   	amex=wizard.width - rose.width
 			y=0
-			savename='result-kananatas.png'
+
  	       	   elif self.posisi == 'kanan bawah' :
     		        x=wizard.width - rose.width
 			y=wizard.height - rose.height
-    		        savename='result-kananbawah.png'
+
   		   elif self.posisi == 'kiri bawah' :
     		        x=0
 			y=wizard.height - rose.height
-    		        savename='result-kiribawah.png'
+
   		   elif self.posisi == 'kiri atas':
     		        x=0
                         y=0
-    		        savename='result-kiriatas.png'
+
 
   		   wizard.composite_channel("all_channels",rose,"dissolve",x,y)
   
-                   wizard.save(filename=savename)
-	
+                   wizard.save(filename=fotonamebase.format(self.image_original.name))

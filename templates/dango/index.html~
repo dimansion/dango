@@ -7,11 +7,11 @@
     <body>
 
        <ul>
-<--!       	   <li><a href="/dango/convert/">Convert</a></li>        
+       	   <li><a href="/dango/convert/">Convert</a></li>        
 	   <li><a href="/dango/resize/">Resize</a></li>
 	   <li><a href="/dango/rotate/">Rotate</a></li>
            <li><a href="/dango/meme/">Meme</a></li>
-	   <li><a href="/dango/watermark-img/">Watermark-img</a></li> -->
+	   <li><a href="/dango/watermark-img/">Watermark-img</a></li>
            <li><a href="/dango/watermark-txt/">Watermark-txt</a></li>	
 	
     </body>

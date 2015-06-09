@@ -1,9 +1,8 @@
-halaman convert
+Convert
 
-<form id="Convert" method="post" action="{%url 'convert'%}">
+<form id="Convert" method="post" action="{%url 'convert'%}" enctype="multipart/form-data">
 	
 	{% csrf_token %}
-
 
 
 

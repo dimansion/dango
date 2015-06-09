@@ -1,6 +1,6 @@
 halaman watermark
 
-<form id="WatermarkTxt" method="post" action="{%url 'WatermarkTxt'%}" enctype="multipart/form-data">
+<form id="WatermarkTxt" method="post" action="{%url 'watermark-txt'%}" enctype="multipart/form-data">
 	
 	{% csrf_token %}
 

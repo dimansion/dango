@@ -1,6 +1,6 @@
 halaman transform
 
-<form id="Convert" method="post" action="{%url 'rotate'%}" enctype="multipart/form-data">
+<form id="Rotate" method="post" action="{%url 'rotate'%}" enctype="multipart/form-data">
 	
 	{% csrf_token %}
 
@@ -9,6 +9,6 @@ halaman transform
 
 {{form.as_p}}
 
-	<input type="submit" name="submit" value="convert" />
+	<input type="submit" name="submit" value="rotate" />
 </form>
 

@@ -7,97 +7,102 @@
 <html>
 	<head>
 		{% load staticfiles %}
-		<title>Miniport by HTML5 UP</title>
+		<title>You know, stuff.</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}"/>
+		<link class="cp-pen-styles" rel="stylesheet" href="{% static 'assets/css/navbar.css' %}"/>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
 	<body>
 
 		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">Top</a></li>
-					<li><a href="#work">Work</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#contact">Contact</a></li>
+		<div class="open"> <span class="cls"></span> <span>
+  <ul class="sub-menu ">
+
+					<li><a href="#top" class="scrolly">Top</a></li>
+					<li><a href="#work" class="scrolly">Work</a></li>
+					<li><a href="#portfolio" class="scrolly">Portfolio</a></li>
+					<li><a href="#contact" class="scrolly">Contact</a></li>
 				</ul>
-			</nav>
+			</span> <span class="cls"></span> </div>
 
 		<!-- Home -->
+		<div id="top">
 			<div class="wrapper style1 first">
-				<article class="container" id="top">
+				<article class="container">
 					<div class="row">
-						<div class="4u 12u(mobile)">
-							<span class="image fit"><img src="{% static 'images/pic00.jpg' %}" alt="" /></span>
+						<div class="3u 12u(mobile)">
+							<span class="image fit"><img src="{% static 'images/d.jpg' %}" alt="" /></span>
 						</div>
 						<div class="8u 12u(mobile)">
 							<header>
-								<h1>Hi. I'm <strong>Jane Doe</strong>.</h1>
+								<h1>Hi. I'm <strong>Dimas Suardi Putra</strong>.</h1>
+								<p>I'm on my way to become a front-end developer.</p>
 							</header>
-							<p>And this is <strong>Miniport</strong>, a free, fully responsive HTML5 site template designed by <a href="http://n33.co">AJ</a> for <a href="http://html5up.net">HTML5 UP</a> &amp; released under the <a href="http://html5up.net/license">CCA license</a>.</p>
 							<a href="#work" class="button big scrolly">Learn about what I do</a>
 						</div>
 					</div>
 				</article>
 			</div>
-
+        </div>
+        
 		<!-- Work -->
-			<div class="wrapper style2">
-				<article id="work">
-					<header>
+			<div class="wrapper style2"> 
+			<article  id="work">
+				<header>
 						<h2>Here's all the stuff I do.</h2>
-						<p>Odio turpis amet sed consequat eget posuere consequat.</p>
+						<p>So far, these are the tools i've been workin with.</p>
 					</header>
 					<div class="container">
 						<div class="row">
 							<div class="4u 12u(mobile)">
 								<section class="box style1">
-									<span class="icon featured fa-comments-o"></span>
-									<h3>Consequat lorem</h3>
-									<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+									<img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-html-5-256.png" width="120"/>
+									<h3>HTML 5</h3>
+									<p>HTML 5 is a revision of the Hypertext Markup Language (HTML), the standard programming language for describing the contents and appearance of Web pages.</p>
 								</section>
 							</div>
 							<div class="4u 12u(mobile)">
 								<section class="box style1">
-									<span class="icon featured fa-camera-retro"></span>
-									<h3>Lorem dolor tempus</h3>
-									<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+									<img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Boostrap_logo.svg" width="120"/>
+									<h3>Bootstrap</h3>
+									<p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.</p>
 								</section>
 							</div>
 							<div class="4u 12u(mobile)">
 								<section class="box style1">
-									<span class="icon featured fa-thumbs-o-up"></span>
-									<h3>Feugiat posuere</h3>
-									<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+									<img src="http://3.bp.blogspot.com/-PTty3CfTGnA/TpZOEjTQ_WI/AAAAAAAAAeo/KeKt_D5X2xo/s1600/js.jpg" width="120"/>
+									<h3>Javascript</h3>
+									<p>JavaScript (often shortened to JS) is a lightweight, interpreted, object-oriented language with first-class functions, and is best known as the scripting language for Web pages.</p>
 								</section>
 							</div>
 						</div>
 					</div>
 					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+						<p>Care to take a look at what i've been learning so far?</p>
 						<a href="#portfolio" class="button big scrolly">See some of my recent work</a>
 					</footer>
 				</article>
 			</div>
 
 		<!-- Portfolio -->
+		
 			<div class="wrapper style3">
 				<article id="portfolio">
 					<header>
 						<h2>Here’s some stuff I made recently.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat lorem ipsum dolore.</p>
+						<!--<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat lorem ipsum dolore.</p>-->
 					</header>
 					<div class="container">
 						<div class="row">
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
-									<a href="#" class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
-									<h3><a href="#">Magna feugiat</a></h3>
-									<p>Ornare nulla proin odio consequat.</p>
+									<a href="/dango" target="_blank" class="image featured"><img src="{% static 'images/1.png' %}" alt="" /></a>
+									<h3><a href="/dango" target="_blank">Web Apps</a></h3>
+									<p>This Web Apps for basic picture editing created using wandd-python and django.</p>
 								</article>
 							</div>
 							<div class="4u 12u(mobile)">
@@ -140,7 +145,6 @@
 						</div>
 					</div>
 					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
 						<a href="#contact" class="button big scrolly">Get in touch with me</a>
 					</footer>
 				</article>
@@ -151,10 +155,10 @@
 				<article id="contact" class="container 75%">
 					<header>
 						<h2>Have me make stuff for you.</h2>
-						<p>Ornare nulla proin odio consequat sapien vestibulum ipsum sed lorem.</p>
+						<p>I'm still looking for oportunity to develop and become a good front-end devs.</p>
 					</header>
 					<div>
-						<div class="row">
+						<!--<div class="row">
 							<div class="12u">
 								<form method="post" action="#">
 									<div>
@@ -186,22 +190,22 @@
 										</div>
 									</div>
 								</form>
-							</div>
+							</div>-->
 						</div>
 						<div class="row">
 							<div class="12u">
 								<hr />
 								<h3>Find me on ...</h3>
 								<ul class="social">
-									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
-									<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-									<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+									<li><a href="https://www.twitter.com/dimansion" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.facebook.com/dimansion" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="https://id.linkedin.com/pub/dimas-suardi-putra/104/57/410" target="_blank" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://instagram.com/dims.tagram/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/dimansion" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
 									<!--
 									<li><a href="#" class="icon fa-rss"><span>RSS</span></a></li>
+									<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+									<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
 									<li><a href="#" class="icon fa-instagram"><span>Instagram</span></a></li>
 									<li><a href="#" class="icon fa-foursquare"><span>Foursquare</span></a></li>
 									<li><a href="#" class="icon fa-skype"><span>Skype</span></a></li>
@@ -210,17 +214,19 @@
 									<li><a href="#" class="icon fa-blogger"><span>Blogger</span></a></li>
 									<li><a href="#" class="icon fa-flickr"><span>Flickr</span></a></li>
 									<li><a href="#" class="icon fa-vimeo"><span>Vimeo</span></a></li>
+									<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 									-->
 								</ul>
 								<hr />
 							</div>
 						</div>
-					</div>
-					<footer>
+						<footer>
 						<ul id="copyright">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; Dimas Suardi Putra. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</footer>
+					</div>
+					
 				</article>
 			</div>
 
@@ -233,5 +239,10 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="{% static 'assets/js/main.js' %}"></script>
 
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+            <script src="{% static 'assets/js/trigger.js' %}"></script>
+            <script type="text/javascript" src="{% static 'assets/js/trigger-2.js' %}"></script>
+
+  
 	</body>
 </html>

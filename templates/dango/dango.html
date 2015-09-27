@@ -2,23 +2,43 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<title>Dango</title>
-	<meta name="author" content="Dimas Suardi Putra">
-	    {% load staticfiles %}
-		<!-- Latest compiled and minified CSS -->
+    <meta charset="utf-8">
+    <title>Dango</title>
+    <meta name="author" content="Dimas Suardi Putra"> {% load staticfiles %}
+    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
 
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="custom.css">
+    <link href='https://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
 </head>
-<body data-spy="scroll" data-target="#main-navbar">
+<style>
+    body {
+        background-color: darkgrey;
+    }
+    h2, h3 {
+    font-family: Rokkitt,serif;
+    font-weight: 100;
+    font-size: 30px;
+    color: #FFF;
+    }
+    button{
+        margin-top: 20px;
+    }
+    footer {
+        margin-top: 40px;
+        background-color: #d9534f;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+    }
+</style>
 
-    <!-- NAVBAR -->
+<body data-spy="scroll" data-target="#main-navbar">
+    <!--
+     NAVBAR 
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="main-navbar" role="navigation">
 
 		<div class="container">
@@ -31,7 +51,7 @@
 				</button>
 
 				<a href="test.html" class="navbar-brand" ></a>
-			</div> <!-- end navbar-header -->
+			</div>
 
 			<div class="collapse navbar-collapse" id="navbar-collapse">
 
@@ -40,134 +60,149 @@
 					<li><a href="#section-features">Features</a></li>
 					<li><a href="#section-contact">Contact</a></li>
 				</ul>
-			</div> <!-- end collapse -->
-		</div> <!-- end container -->
-	</nav>
+			</div> 
+		</div> 
+	</nav>-->
 
-        <!-- BANNER -->
-	<div class="jumbotron" style="padding:30px">
-		<div class="container text-center">
-			<img src="{% static 'images/img/face.png' %}" alt="dimansion" style="width:140px;height:140px;margin-top:30px" >
-        </div> <!-- end container -->
-	</div> <!-- end jumbotron -->
+    <!-- BANNER -->
+    <div class="jumbotron" style="padding:30px">
+        <div class="container text-center">
+            <img src="{% static 'images/img/face.png' %}" alt="dimansion" width="150">
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end jumbotron -->
 
+    <!-- FEATURES -->
+    <section>
+        <div class="container">
+            <div class="page-header" id="section-features">
+                <h2>Features.</h2>
+            </div>
+            <!-- end page-header -->
+
+
+            <ul class="nav nav-pills ">
+                <li>
+                    <a href="#section-1" data-toggle="tab"><img src="{% static 'images/img/conv.png' %}" alt="Convert" style="width:50px;height:50px;"></a>
+                </li>
+                <li>
+                    <a href="#section-2" data-toggle="tab"><img src="{% static 'images/img/res.png' %}" alt="Resize" style="width:50px;height:50px;"></a>
+                </li>
+                <li>
+                    <a href="#section-3" data-toggle="tab"><img src="{% static 'images/img/rot.png' %}" alt="Rotate" style="width:50px;height:50px;"></a>
+                </li>
+                <li>
+                    <a href="#section-4" data-toggle="tab"><img src="{% static 'images/img/meme.png' %}" alt="Meme" style="width:50px;height:50px;"></a>
+                </li>
+                <li>
+                    <a href="#section-5" data-toggle="tab"><img src="{% static 'images/img/txt.png' %}" alt="Watermark Teks" style="width:50px;height:50px;"></a>
+                </li>
+                <li>
+                    <a href="#section-6" data-toggle="tab"><img src="{% static 'images/img/gbr.png' %}" alt="Watermark Gambar" style="width:50px;height:50px;"></a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade " id="section-1">
+                    <iframe src="{% url 'convert'%}" name="iframe_a" style="border:none" scrolling="NO" height="200" width="1200"></iframe>
+                </div>
+                <div class="tab-pane fade" id="section-2">
+                    <iframe src="{% url 'resize'%}" name="iframe_a" style="border:none" scrolling="NO" height="160" width="600"></iframe>
+                </div>
+                <div class="tab-pane fade" id="section-3">
+                    <iframe src="{% url 'rotate'%}" name="iframe_a" style="border:none" scrolling="NO" height="160" width="600"></iframe>
+                </div>
+                <div class="tab-pane fade" id="section-4">
+                    <iframe src="{% url 'meme'%}" name="iframe_a" style="border:none" scrolling="NO" height="200" width="600"></iframe>
+                </div>
+                <div class="tab-pane fade" id="section-5">
+                    <iframe src="{% url 'watermark-txt'%}" name="iframe_a" style="border:none" scrolling="NO" height="200" width="600"></iframe>
+                </div>
+                <div class="tab-pane fade" id="section-6">
+                    <iframe src="{% url 'watermark-img'%}" name="iframe_a" style="border:none" scrolling="NO" height="200" width="600"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="container">
-		<!-- Home -->
-		<section>
-			<div class="page-header" id="section-home" >
-				<h2>Image Transformer.</h2>
-			</div> <!-- end page-header -->
-
-			<div class="row">
-				<div class="col-md-4">
-					<blockquote>
-						<p>Converter <img src="{% static 'images/img/conv.png' %}" alt="dimansion" style="float:right;width:100px;height:100px;" ><small> merubah format ekstensi gambar</small>
-                        </p>
-					</blockquote>
-				</div>
-				<div class="col-md-4">
-				    <blockquote>
-                        <p>Resize <img src="{% static 'images/img/res.png' %}" alt="dimansion" style="float:right;width:95px;height:95px;" ><small>merubah ukuran gambar berdasarkan persentase</small></p>
-					</blockquote>
-				</div>
-             <div class="col-md-4">
-				    <blockquote>
-                        <p>Rotate <img src="{% static 'images/img/rot.png' %}" alt="dimansion" style="float:right;width:95px;height:95px;" ><small>merotasi gambar</small>
-                        </p>
-					</blockquote>
-				</div>
-			</div>
-
-			 <div class="row">
-				<div class="col-md-4">
-				    <blockquote>
-                        <p>Meme <img src="{% static 'images/img/meme.png' %}" alt="dimansion" style="float:right;width:95px;height:95px;" ><small>meme, meme everywhere </small>
-                        </p>
-					</blockquote>
-                </div>
-                <div class="col-md-4">
-				    <blockquote>
-                        <p>Watermark Teks <img src="{% static 'images/img/txt.png' %}" alt="dimansion" style="float:right;width:95px;height:95px;" ><small>membuat watermark pada gambar berupa teks</small></p>
-					</blockquote>
-                </div>
-                <div class="col-md-4">
-				    <blockquote>
-                        <p>Watermark Gambar <img src="{% static 'images/img/gbr.png' %}" alt="dimansion" style="float:right;width:95px;height:95px;" ><small> membuat watermark dengan gambar lainnya</small></p>
-					</blockquote>
-                </div> <!-- end row -->
-
-
-		</section>
-
-        <!-- FEATURES -->
-		<section>
-			<div class="page-header" id="section-features">
-				<h2>Features.</h2>
-			</div> <!-- end page-header -->
-
+        <!-- Home -->
+        <section>
             <div class="container">
-			<ul class="nav nav-pills ">
-				<li><a href="#section-1" data-toggle="tab"><img src="{% static 'images/img/conv.png' %}" alt="Convert" style="width:50px;height:50px;" ></a></li>
-				<li><a href="#section-2" data-toggle="tab"><img src="{% static 'images/img/res.png' %}" alt="Resize" style="width:50px;height:50px;" ></a></li>
-				<li><a href="#section-3" data-toggle="tab"><img src="{% static 'images/img/rot.png' %}" alt="Rotate" style="width:50px;height:50px;" ></a></li>
-				<li><a href="#section-4" data-toggle="tab"><img src="{% static 'images/img/meme.png' %}" alt="Meme" style="width:50px;height:50px;" ></a></li>
-				<li><a href="#section-5" data-toggle="tab"><img src="{% static 'images/img/txt.png' %}" alt="Watermark Teks" style="width:50px;height:50px;" ></a></li>
-				<li><a href="#section-6" data-toggle="tab"><img src="{% static 'images/img/gbr.png' %}" alt="Watermark Gambar" style="width:50px;height:50px;" ></a></li>
-			</ul>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click here for help</button>
+                <div id="demo" class="collapse">
 
-			<div class="tab-content">
-				<div class="tab-pane fade " id="section-1">
-					<iframe src="{% url 'convert'%}" name="iframe_a"  style="border:none" scrolling="NO" height="200" width="1200"></iframe>
-				</div>
-				<div class="tab-pane fade" id="section-2">
-					<iframe src="{% url 'resize'%}" name="iframe_a"  style="border:none" scrolling="NO" height="160" width="600"></iframe>
-				</div>
-				<div class="tab-pane fade" id="section-3">
-					<iframe src="{% url 'rotate'%}" name="iframe_a"  style="border:none" scrolling="NO" height="160" width="600"></iframe>
-				</div>
-				<div class="tab-pane fade" id="section-4">
-					<iframe src="{% url 'meme'%}" name="iframe_a"  style="border:none" scrolling="NO" height="200" width="600"></iframe>
-				</div>
-				<div class="tab-pane fade" id="section-5">
-					<iframe src="{% url 'watermark-txt'%}" name="iframe_a"  style="border:none" scrolling="NO" height="200" width="600"></iframe>
-				</div>
-				<div class="tab-pane fade" id="section-6">
-					<iframe src="{% url 'watermark-img'%}" name="iframe_a"  style="border:none" scrolling="NO" height="200" width="600"></iframe>
-				</div>
-			</div>
-		</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <blockquote>
+                                <p>Converter <img src="{% static 'images/img/conv.png' %}" alt="dimansion" style="float:right;width:100px;height:100px;"><small> merubah format ekstensi gambar</small>
+                                </p>
+                            </blockquote>
+                        </div>
+                        <div class="col-md-4">
+                            <blockquote>
+                                <p>Resize <img src="{% static 'images/img/res.png' %}" alt="dimansion" style="float:right;width:95px;height:95px;"><small>merubah ukuran gambar berdasarkan persentase</small></p>
+                            </blockquote>
+                        </div>
+                        <div class="col-md-4">
+                            <blockquote>
+                                <p>Rotate <img src="{% static 'images/img/rot.png' %}" alt="dimansion" style="float:right;width:95px;height:95px;"><small>merotasi gambar</small>
+                                </p>
+                            </blockquote>
+                        </div>
+                    </div>
 
-        <!-- CONTACT -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <blockquote>
+                                <p>Meme <img src="{% static 'images/img/meme.png' %}" alt="dimansion" style="float:right;width:95px;height:95px;"><small>meme, meme everywhere </small>
+                                </p>
+                            </blockquote>
+                        </div>
+                        <div class="col-md-4">
+                            <blockquote>
+                                <p>Watermark Teks <img src="{% static 'images/img/txt.png' %}" alt="dimansion" style="float:right;width:95px;height:95px;"><small>membuat watermark pada gambar berupa teks</small></p>
+                            </blockquote>
+                        </div>
+                        <div class="col-md-4">
+                            <blockquote>
+                                <p>Watermark Gambar <img src="{% static 'images/img/gbr.png' %}" alt="dimansion" style="float:right;width:95px;height:95px;"><small> membuat watermark dengan gambar lainnya</small></p>
+                            </blockquote>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- CONTACT 
 		<section>
 			<div class="page-header" id="section-contact">
 				<h2>Contact. <small>Seputar pertanyaan dan saran sila kirim ke </small></h2>
 			</div> <!-- end page-header -->
 
-
+    <!--
                     <p><strong>Dimas Suardi Putra</strong></p>
 
           <p><img src="{% static 'images/img/mail.png' %}" alt="dimansion" style="width:30px;height:30px" >
 					dimansional@gmail.com</p>
             <p><img src="{% static 'images/img/line.jpg' %}" alt="dimansion" style="width:100px;height:100px"</p>
-		</section>
+		</section> -->
 
-        <!-- FOOTER -->
-		<footer>
-		    <div class="container text-center">
-
-		        <ul class="list-inline">
-					<li><a href="http://www.twitter.com/dimansion" target="_blank">Twitter</a></li>
-					<li><a href="http://www.facebook.com/dimansion" target="_blank">Facebook</a></li>
-				</ul>
-
-				<p>&copy; Copyright 2015.</p>
-			</div> <!-- end container -->
-
-		</footer>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; Dimas Suardi Putra.</p>
+        </div>
+        <!-- end container -->
+    </footer>
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
+
 </html>

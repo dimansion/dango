@@ -41,10 +41,10 @@ class ConvertDownload(View):
 	id=None
 	def get (self,request,id):
     		img=Convert.objects.get(id=id)
-		filename='/home/dimasuardi/dango/media/{}'.format(img.image_original.name)
+		filename='/home/dimansion/dango/media/{}'.format(img.image_original.name)
 		base=os.path.basename(filename)
 		nama=os.path.splitext(base)[0]
-		filename='/home/dimasuardi/dango/media/images/{}.{}'.format(nama,img.ekstensi)
+		filename='/home/dimansion/dango/media/images/{}.{}'.format(nama,img.ekstensi)
     		wrapper      = FileWrapper(open(filename))  # img.file returns full path to the image
 	    	content_type = mimetypes.guess_type(filename)[0]  # Use mimetypes to get file type
     		response     = HttpResponse(wrapper,content_type=content_type)
@@ -73,7 +73,7 @@ class RotateDownload(View):
 	id=None
 	def get (self,request,id):
     		img=Rotate.objects.get(id=id)
-		filename='/home/dimasuardi/dango/media/{}'.format(img.image_original.name)
+		filename='/home/dimansion/dango/media/{}'.format(img.image_original.name)
     		wrapper      = FileWrapper(open(filename))  # img.file returns full path to the image
 	    	content_type = mimetypes.guess_type(filename)[0]  # Use mimetypes to get file type
     		response     = HttpResponse(wrapper,content_type=content_type)
@@ -103,7 +103,7 @@ class ResizeDownload(View):
 	id=None
 	def get (self,request,id):
     		img=Resize.objects.get(id=id)
-		filename='/home/dimasuardi/dango/media/{}'.format(img.image_original.name)
+		filename='/home/dimansion/dango/media/{}'.format(img.image_original.name)
     		wrapper      = FileWrapper(open(filename))  # img.file returns full path to the image
 	    	content_type = mimetypes.guess_type(filename)[0]  # Use mimetypes to get file type
     		response     = HttpResponse(wrapper,content_type=content_type)
@@ -133,7 +133,7 @@ class MemeDownload(View):
 	id=None
 	def get (self,request,id):
     		img=Meme.objects.get(id=id)
-		filename='/home/dimasuardi/dango/media/{}'.format(img.image_original.name)
+		filename='/home/dimansion/dango/media/{}'.format(img.image_original.name)
     		wrapper      = FileWrapper(open(filename))  # img.file returns full path to the image
 	    	content_type = mimetypes.guess_type(filename)[0]  # Use mimetypes to get file type
     		response     = HttpResponse(wrapper,content_type=content_type)
@@ -165,7 +165,7 @@ class WatermarkImgDownload(View):
 	id=None
 	def get (self,request,id):
     		img=WatermarkImg.objects.get(id=id)
-		filename='/home/dimasuardi/dango/media/{}'.format(img.image_original.name)
+		filename='/home/dimansion/dango/media/{}'.format(img.image_original.name)
     		wrapper      = FileWrapper(open(filename))  # img.file returns full path to the image
 	    	content_type = mimetypes.guess_type(filename)[0]  # Use mimetypes to get file type
     		response     = HttpResponse(wrapper,content_type=content_type)
@@ -195,7 +195,7 @@ class WatermarkTxtDownload(View):
 	id=None
 	def get (self,request,id):
     		img=WatermarkTxt.objects.get(id=id)
-		filename='/home/dimasuardi/dango/media/{}'.format(img.image_original.name)
+		filename='/home/dimansion/dango/media/{}'.format(img.image_original.name)
     		wrapper      = FileWrapper(open(filename))  # img.file returns full path to the image
 	    	content_type = mimetypes.guess_type(filename)[0]  # Use mimetypes to get file type
     		response     = HttpResponse(wrapper,content_type=content_type)

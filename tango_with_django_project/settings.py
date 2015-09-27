@@ -32,7 +32,7 @@ TEMPLATE_DIRS = (
     TEMPLATE_PATH,
 )
 
-ALLOWED_HOSTS = ['dimasuardi.pythonanywhere.com']
+ALLOWED_HOSTS = ['dimansion.pythonanywhere.com']
 
 
 # Application definition

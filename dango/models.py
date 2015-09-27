@@ -13,14 +13,14 @@ class Convert(models.Model):
 	def save(self):
 		super(Convert,self).save()
 		fotoname="/home/dimansuardi/dango/media/{}".format(self.image_original.name)
-		nama="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
+		nama="/home/dimansion/dango/media/{}".format(self.image_original.name)
 		with Image(filename=nama) as original:
 			with original.convert(str(self.ekstensi)) as converted:
 				base=os.path.basename(fotoname)
 
 				nama=os.path.splitext(base)[0]
 
-				converted.save(filename='/home/dimasuardi/dango/media/images/{}.{}'.format(nama,self.ekstensi))
+				converted.save(filename='/home/dimansion/dango/media/images/{}.{}'.format(nama,self.ekstensi))
 		super(Convert,self).save()
 
 class Resize(models.Model):
@@ -29,7 +29,7 @@ class Resize(models.Model):
 	persen=models.IntegerField(null=True,blank=True)
 	def save(self):
 		super(Resize,self).save()
-		fotoname="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
+		fotoname="/home/dimansion/dango/media/{}".format(self.image_original.name)
 
 		with Image(filename=fotoname) as img:
     		 width = img.width * self.persen/100
@@ -47,7 +47,7 @@ class Rotate(models.Model):
 	direction=models.CharField(max_length=7,null=True,blank=True,choices=Arah)
 	def save(self):
 		super(Rotate,self).save()
-		fotoname="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
+		fotoname="/home/dimansion/dango/media/{}".format(self.image_original.name)
 
        	 	with Image(filename=fotoname) as img:
 
@@ -69,7 +69,7 @@ class Meme(models.Model):
 	url_image=models.CharField(max_length=250,null=True,blank=True)
 	def save(self):
 		super(Meme,self).save()
-		fotoname="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
+		fotoname="/home/dimansion/dango/media/{}".format(self.image_original.name)
 
 		with Image(filename = fotoname) as source_img:
 			warna= Color('#ffffff')
@@ -89,7 +89,7 @@ class WatermarkTxt(models.Model):
 
 	def save(self):
 		super(WatermarkTxt,self).save()
-		fotoname="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
+		fotoname="/home/dimansion/dango/media/{}".format(self.image_original.name)
 
 		with Image(filename = fotoname) as source_img:
 		 	warna= Color('#ffffff')
@@ -119,8 +119,8 @@ class WatermarkImg(models.Model):
 	posisi=models.CharField(max_length=20,null=True,blank=True,choices=place)
 	def save(self):
 		super(WatermarkImg,self).save()
-		fotonamelogo="/home/dimasuardi/dango/media/{}".format(self.image_logo.name)
-		fotonamebase="/home/dimasuardi/dango/media/{}".format(self.image_original.name)
+		fotonamelogo="/home/dimansion/dango/media/{}".format(self.image_logo.name)
+		fotonamebase="/home/dimansion/dango/media/{}".format(self.image_original.name)
 		images = (fotonamelogo,fotonamebase)
 		with nested(Image(filename=images[0]),
  	           Image(filename=images[1])) as (rose, wizard):

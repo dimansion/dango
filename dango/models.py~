@@ -6,7 +6,7 @@ from wand.compat import nested
 import os
 
 class Convert(models.Model):
-	FORMAT=(('png','png'),('jpg','jpg'),('tiff','tiff'),('webP','webP'),('pdf','pdf'))
+	FORMAT=(('png','png'),('bnp','bnp'),('tiff','tiff'),('pdf','pdf'))
 	ekstensi=models.CharField(max_length=9,choices=FORMAT)
 	image_original = models.ImageField(upload_to="images/",null=True,blank=True)
 	image_converted = models.ImageField(upload_to="images/",null=True,blank=True)

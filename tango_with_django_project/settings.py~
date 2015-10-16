@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rango',
     'dango',
+    'portofolio',
 )
 
 MIDDLEWARE_CLASSES = (

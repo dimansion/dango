@@ -10,12 +10,13 @@ if not settings.DEBUG:
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'portofolio.views.index', name='index'),
-    # url(r'^blog/', include('blog.urls')),
+    url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^rango/', include('rango.urls')), # ADD THIS NEW TUPLE!
+    url(r'^rango/', include('rango.urls')), 
     url(r'^dango/', include('dango.urls')),
     url(r'^portofolio/', include('portofolio.urls')) 
+    #url(r'^blog/', include('blog.urls')),
 )
 if settings.DEBUG:
     urlpatterns += patterns(

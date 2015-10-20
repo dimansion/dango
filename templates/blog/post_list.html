@@ -7,7 +7,7 @@
             </div>
             <h1><a href="{% url "post_detail" pk=post.pk %}">{{ post.title }}</a></h1>
             <p>{{ post.text|truncatewords:20 }}</p>
-            <p class="post-meta">Posted by <a href="#" style="text-decoration: none">Dimas Suardi Putra</a> On {{ post.published_date }}</p>
+            <p class="post-meta" style="color: grey; font-style:italic">Posted by <a href="#" style="text-decoration: none">Dimas Suardi Putra</a> On {{ post.published_date }}</p>
             <hr>
         </div>
     {% endfor %}

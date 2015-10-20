@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^dango/', include('dango.urls')),
     url(r'^portofolio/', include('portofolio.urls')) 
     #url(r'^blog/', include('blog.urls')),
+    
 )
 if settings.DEBUG:
     urlpatterns += patterns(

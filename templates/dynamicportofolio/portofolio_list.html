@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>Portofolio</title>
+</head>
+<body>
+<h1>Portofolio</h1>
+
+{% for portofolio in portofolio %}
+    <div>
+        <h3>name: {{ portofolio.name }}</h3>
+        <p>description: {{ portofolio.description }}</p>
+    </div>
+{% endfor %}
+
+</body>
+</html>

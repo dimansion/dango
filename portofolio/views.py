@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import Portofolio
-
+from .models import Porto
 
 def index(request):
-    context_dict = {}
+    portofolio = Porto.objects.all()
+    context_dict = {'portofolio':portofolio}
     return render (request, 'portofolio/index.html', context_dict)
 
 def portofolio_list(request):

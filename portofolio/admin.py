@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Portofolio
+from .models import Porto
 
-admin.site.register(Portofolio)
+admin.site.register(Porto)

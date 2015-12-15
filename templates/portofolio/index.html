@@ -69,14 +69,14 @@
                             <span class="progress-completed">80%</span>
                         </div>
                     </div>
-                    {% for portofolio in portofolio %}
+                    {% for portofolio in porto %}
     <div>
-        <img src="{{ portofolio.image.url }}" width="100" height="100"/>
-        <h3>name: {{ portofolio.name }}</h3>
-        <p>description: {{ portofolio.description }}</p>
+        <img src="{{ porto.image.url }}" width="100" height="100"/>
+        <h3>name: {{ porto.name }}</h3>
+        <p>description: {{ porto.description }}</p>
     </div>
 {% endfor %}
-{{ portofolio }}
+{{ porto }}
                 </div>
                 <span class="bl-icon bl-icon-close"></span>
             </section>

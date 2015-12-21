@@ -1,0 +1,16 @@
+body {
+	background-color: #F4D488;
+	font-family: cursive;
+	text-align: center;
+	margin-top: 150px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    align: center;
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+}

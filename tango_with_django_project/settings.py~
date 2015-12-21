@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'dango',
     'portofolio',
     'blog',
+    'dynamicportofolio'
 )
 
 MIDDLEWARE_CLASSES = (

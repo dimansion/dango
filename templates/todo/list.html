@@ -1,25 +1,16 @@
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>To Do Apps</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<style>
-    table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-    text-align: center;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/todostyle.css' %}" />
 </head>
 <body>
     
 <h1>To Do Apps</h1>
-<table>
+<table align="center">
   <tr>
     <th>To do</th>
     <th>Time</th> 

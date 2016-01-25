@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     url(r'^dynamicportofolio/', include('dynamicportofolio.urls')),
     url(r'^todo/', include('todo.urls')),
     #url(r'^blog/', include('blog.urls')),
-     
+    url(r'^polls/', include('polls.urls')),
 )
 if settings.DEBUG:
     urlpatterns += patterns(

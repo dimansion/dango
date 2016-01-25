@@ -48,7 +48,9 @@ INSTALLED_APPS = (
     'dango',
     'portofolio',
     'blog',
-    'dynamicportofolio'
+    'dynamicportofolio',
+    'todo',
+    'polls.apps.PollsConfig',
 )
 
 MIDDLEWARE_CLASSES = (

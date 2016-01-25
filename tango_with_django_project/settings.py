@@ -49,7 +49,8 @@ INSTALLED_APPS = (
     'portofolio',
     'blog',
     'dynamicportofolio',
-    'todo'
+    'todo',
+    'polls',
 )
 
 MIDDLEWARE_CLASSES = (

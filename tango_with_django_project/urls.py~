@@ -15,7 +15,8 @@ urlpatterns = patterns('',
     url(r'^rango/', include('rango.urls')), 
     url(r'^dango/', include('dango.urls')),
     url(r'^portofolio/', include('portofolio.urls')), 
-    url(r'^dynamicportofolio/', include('dynamicportofolio.urls'))
+    url(r'^dynamicportofolio/', include('dynamicportofolio.urls')),
+    url(r'^todo/', include('todo.urls')),
     #url(r'^blog/', include('blog.urls')),
      
 )

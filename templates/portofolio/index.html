@@ -12,6 +12,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/component.css' %}" />
     <script src="{% static 'assets/js/modernizr.custom.js' %}"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+    var myCenter=new google.maps.LatLng(-6.244128, 106.949576);
+
+    function initialize()
+    {
+        var mapProp = {
+            center:myCenter,
+            zoom:15,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var marker=new google.maps.Marker({
+            position:myCenter,
+            });
+        marker.setMap(map);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 </head>
 
 <body>
@@ -108,10 +128,16 @@
                     <h2 class="bl-icon bl-icon-contact"></h2>
                 </div>
                 <div class="bl-content">
+                    <div class="row">
                     <h2>Get in touch</h2>
                     <hr>
                     <p>You can find me on :</p>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
+                    <div id="googleMap" style="width:500px;height:380px;"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <p><i class="fa fa-envelope"></i> dimansional@gmail.com</p>
+                        <hr>
                         <ul class="social-network social-circle">
                             <li><a href="https://github.com/dimansion" target="_blank" class="icoGithub" title="Github"><i class="fa fa-github"></i></a></li>
                             <li><a href="https://www.facebook.com/dimansion" target="_blank" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -119,6 +145,7 @@
                             <li><a href="https://instagram.com/dims.tagram/" target="_blank" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
                             <li><a href="https://id.linkedin.com/pub/dimas-suardi-putra/104/57/410" target="_blank" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
+                    </div>
                     </div>
                 </div>
                 <span class="bl-icon bl-icon-close"></span>

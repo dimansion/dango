@@ -6,13 +6,13 @@ from .forms import *
 from wand.image import Image
 from django.views.generic.base import View
 from .models import *
-from django.core.servers.basehttp import FileWrapper
+
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
-
+from django.core.servers.basehttp import FileWrapper
 import mimetypes
 
 def index(request):

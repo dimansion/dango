@@ -10,9 +10,7 @@ from .models import *
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
-
-from django.core.servers.basehttp import FileWrapper
+from wsgiref.util import FileWrapper
 import mimetypes
 
 def index(request):

@@ -52,6 +52,10 @@ a:hover {
     margin-left: 0;
 }
 
+.profile {
+	border-bottom: 1px solid #393939;
+}
+
 .bl-main {
 	position: absolute;
 	width: 100%;
@@ -68,25 +72,28 @@ a:hover {
 .bl-main > section:first-child {
 	top: 0;
 	left: 0;
-	background: #C33946;
+	background: #FFF;
 }
 
 .bl-main > section:nth-child(2) {
 	top: 0;
 	left: 50%;
-	background: #3497DB;
+	background: #383838;
+	color: #FFF;
 }
 
 .bl-main > section:nth-child(3) {
 	top: 50%;
 	left: 0;
-	background: #10AD9C;
+	background: #383838;
+	color: #FFF;
 }
 
 .bl-main > section:nth-child(4) {
 	top: 50%;
 	left: 50%;
-	background: #FBCF62;
+	background: #FFF;
+	color: #383838;
 }
 
 .bl-box {
@@ -221,7 +228,7 @@ div.bl-panel-items > div > div {
 }
 
 .bl-content article a {
-	color: rgba(0,0,0,0.2);
+	color: rgba(0,0,0,0.7);
 }
 
 .bl-content > ul {
@@ -256,6 +263,11 @@ div.bl-panel-items > div > div {
     position: relative;
 	height: 25px;
 }
+
+.progress-bar{
+	background: #383838;
+}
+
 .progress > .progress-type {
 	position: absolute;
 	left: 0px;
@@ -334,6 +346,7 @@ a.socialIcon:hover, .socialHoverClass {
 	margin:0;
 	line-height:50px;
 	text-align: center;
+	color: #383838;
 }
 
 .social-circle li a:hover i, .triggeredHover {
@@ -490,16 +503,17 @@ div.bl-panel-items > div.bl-hide-current-work {
 }
 
 .bl-main > section:first-child.bl-expand {
-	background: #EE4444;
+	background: #FFF;
+	color: #393939;
 }
 .bl-main > section:nth-child(2).bl-expand {
-	background: #BD5E45;
+	background: #383838;
 }
 .bl-main > section:nth-child(3).bl-expand {
-	background: #8C337D;
+	background: #383838;
 }
 .bl-main > section:nth-child(4).bl-expand {
-	background: #0D8278;
+	background: #FFF;
 }
 
 .bl-main.bl-expand-item > section:not(.bl-expand),

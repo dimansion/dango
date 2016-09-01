@@ -581,3 +581,10 @@ section.bl-expand .bl-icon-close {
 		width: 40%;
 	}
 }
+
+@media screen and (max-width: 480px) {
+	#googleMap {
+		height: 200px;
+		width: 250px;
+	}
+}
